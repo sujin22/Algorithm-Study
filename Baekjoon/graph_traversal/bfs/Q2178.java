@@ -1,4 +1,4 @@
-package graph_traversal;
+package graph_traversal.bfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
