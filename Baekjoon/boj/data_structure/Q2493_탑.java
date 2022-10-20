@@ -49,7 +49,7 @@ public class Q2493_탑 {
         }
     }
 
-    static class FastReader{
+    private static class FastReader{
         BufferedReader br;
         StringTokenizer st;
         public FastReader(){

@@ -70,13 +70,11 @@ public class Q1935_후위표기식2 {
         return c - 'A';
     }
 
-    static class FastReader{
+    private static class FastReader{
         BufferedReader br;
         StringTokenizer st;
         public FastReader(){
             br = new BufferedReader(new InputStreamReader(System.in));
         }
-
-
     }
 }

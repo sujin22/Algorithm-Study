@@ -94,7 +94,7 @@ public class Q18258_큐2 {
         }
     }
 
-    static class FastReader{
+    private static class FastReader{
         BufferedReader br;
         StringTokenizer st;
         public FastReader(){

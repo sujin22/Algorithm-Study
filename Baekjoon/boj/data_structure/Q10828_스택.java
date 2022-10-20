@@ -49,7 +49,7 @@ public class Q10828_스택 {
         }
         System.out.println(sb);
     }
-    static class FastReader{
+    private static class FastReader{
         BufferedReader br;
         StringTokenizer st;
 

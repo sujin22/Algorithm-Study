@@ -2,10 +2,12 @@ package mine;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class TwoQueueStack {
     Queue<Integer> q1, q2;
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
     public TwoQueueStack(){
         q1 = new LinkedList<>();
         q2 = new LinkedList<>();
