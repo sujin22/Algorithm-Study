@@ -3,57 +3,52 @@ package boj.graph_traversal.위상정렬;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
-public class Q1516_게임개발 {
+public class Q14567_선수과목 {
     public static void main(String[] args) {
         FastReader reader = new FastReader();
         int n = reader.nextInt();
-        int[] time = new int[n+1];
+        int m = reader.nextInt();
 
-        ArrayList<Integer>[] nextBuilds = new ArrayList[n+1];
+        ArrayList<Integer>[] nextList = new ArrayList[n+1];
         for(int i = 1; i< n+1; i++){
-            nextBuilds[i] = new ArrayList<>();
+            nextList[i] = new ArrayList<>();
         }
+
         int[] indegree = new int[n+1];
-
-        for(int i = 1; i< n+1; i++){
-            time[i] = reader.nextInt();
-            while(true){
-                int input = reader.nextInt();
-                if(input == -1) break;
-
-                nextBuilds[input].add(i);
-                indegree[i]++;
-            }
+        for(int i = 0; i< m ;i++){
+            int first = reader.nextInt();
+            int next = reader.nextInt();
+            indegree[next]++;
+            nextList[first].add(next);
         }
-        int[] totalTime = new int[n+1];
 
-        Queue<Integer> queue = new LinkedList<>();
-        for(int i = 1; i< n+1; i++){
+        Queue<Integer> queue = new ArrayDeque<>();
+        int[] result = new int[n+1];
+
+        for(int i = 1; i< n+1;i++){
             if(indegree[i] == 0){
                 queue.offer(i);
-                totalTime[i] = time[i];
+                result[i] = 1;
             }
         }
 
         while(!queue.isEmpty()){
             int now = queue.poll();
-            for(int i: nextBuilds[now]){
-                indegree[i]--;
-                totalTime[i] = Integer.max(totalTime[i], totalTime[now]+time[i]);
-                if(indegree[i]==0){
-                    queue.offer(i);
+            for(int next: nextList[now]){
+                indegree[next]--;
+                result[next] = Integer.max(result[next], result[now]+1);
+                if(indegree[next]==0){
+                    queue.offer(next);
                 }
             }
         }
-
-        for(int i = 1; i< n+1 ;i++){
-            System.out.println(totalTime[i]);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1; i< n+1; i++){
+            sb.append(result[i] +" ");
         }
+        System.out.println(sb);
     }
     private static class FastReader{
         BufferedReader br;
