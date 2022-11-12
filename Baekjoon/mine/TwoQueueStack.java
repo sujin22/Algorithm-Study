@@ -7,10 +7,9 @@ import java.util.Queue;
 
 public class TwoQueueStack {
     Queue<Integer> q1, q2;
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
     public TwoQueueStack(){
-        q1 = new LinkedList<>();
-        q2 = new LinkedList<>();
+        q1 = new ArrayDeque<>();
+        q2 = new ArrayDeque<>();
     }
     public void push(int element){
         q1.offer(element);

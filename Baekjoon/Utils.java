@@ -190,6 +190,10 @@ public class Utils {
         for(String key: hm.keySet()){
             hm.get(key);
         }
+
+        hm.forEach((key, value) ->{
+            System.out.println("key"+key+", value"+value);
+        });
     }
 
     /*Queue*/
