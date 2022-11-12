@@ -1,3 +1,5 @@
+package boj.LIS;
+
 import java.io.*;
 import java.util.*;
 
