@@ -2,8 +2,7 @@ import java.util.*;
 
 public class Utils {
     public static void main(String[] args) {
-        int[] arr = {1,2,3};
-        powerSet(arr);
+       array();
     }
     /*배열*/
     private static void array(){
@@ -18,11 +17,14 @@ public class Utils {
         char[] c = {'a','b','c'};
         String str = new String(c);
         str = String.valueOf(c);
+        System.out.println(str);
 
         //문자열 -> char배열
         str = "Hello";
         char[] charArray = str.toCharArray();
-        System.out.println(String.valueOf(charArray));
+        System.out.println(Arrays.toString(charArray));
+
+
 
         //배열 정렬
         int[] arr = {3,4,5,2,1};
@@ -114,6 +116,16 @@ public class Utils {
         //arraylist to array
         ArrayList<String> arrayList = new ArrayList<>();
         String[] array = arrayList.toArray(new String[arrayList.size()]);
+
+        //array to arraylist
+        Integer[] arr = {1,2,3,5,4,3};
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(arr));
+
+        //sort
+        Collections.sort(list2, (o1, o2) ->{
+            return o1 - o2;
+        });
+
     }
 
     /*문자열*/
@@ -255,6 +267,13 @@ public class Utils {
             System.out.println(node.y+" "+node.x);
         }
 
+        //pq to array
+        int[] arr2 = pq.stream()
+                .map(String::valueOf)
+                .mapToInt(Integer::parseInt)
+                .toArray();
+
+        Integer[] arr3 = pq.toArray(new Integer[0]);
     }
 
     /*Math 라이브러리*/
@@ -309,5 +328,12 @@ public class Utils {
     }
 
     //////
+    //HashSet
+     private static void hashSet(){
+         Integer[] arr = {1,2,3,4,4};
+         HashSet<Integer> set = new HashSet<>(Arrays.asList(arr));
+         System.out.println(set); //[1,2,3,4]
 
+
+     }
 }

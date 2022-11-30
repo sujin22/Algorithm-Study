@@ -6,7 +6,6 @@ public class PG_징검다리건너기 {
             // return sol1(stones, k); //효율성테스트 전체 시간초과
             //return sol2(stones, k); //sliding window 사용(효율성테스트 일부 시간초과)
             return sol3(stones, k); //이분탐색 사용(성공)
-
         }
         public int sol3(int[] stones, int k){
             int low = 0;
